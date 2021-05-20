@@ -1,6 +1,7 @@
 .idea
 .eggs
 .pytest_cache
+yqk-tools.egg-info
 build
 dist
 *.pyc
