@@ -1,0 +1,7 @@
+.idea
+.eggs
+.pytest_cache
+build
+dist
+*.pyc
+Pipfile.lock
