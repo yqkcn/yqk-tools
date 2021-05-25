@@ -11,3 +11,7 @@ install:
   - pip install pytest==5.4.3
   - pip install pytest-cov codecov
   - pip install redis pyyaml
+
+script:
+  - black --check .
+  - pytest --cov=./
