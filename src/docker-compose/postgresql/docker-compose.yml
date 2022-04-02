@@ -1,0 +1,16 @@
+# Use postgres/example user/password credentials
+version: '3.7'
+
+services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: cabf5d49ff114593abcaad98eccb24ee
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+      PGDATA: /var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
