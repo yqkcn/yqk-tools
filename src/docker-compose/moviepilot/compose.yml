@@ -1,0 +1,17 @@
+services:
+  moviepilot:
+    image: jxxghp/moviepilot
+    container_name: moviepilot
+    ports:
+      - 8001:3000
+    volumes:
+      - ./moviepilot:/moviepilot
+      - ./config:/config
+      - /data:/data
+    env_file:
+      - .env
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"

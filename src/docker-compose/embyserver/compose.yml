@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  emby:
+    image:  emby/embyserver
+    container_name: embyserver
+    volumes:
+      - ./config:/config # Configuration directory
+      - /data:/data # Media directory
+    ports:
+      - 18096:8096 # HTTP port
+      - 18920:8920 # HTTPS port
+    restart: always
+    devices:
+      - /dev/dri:/dev/dri

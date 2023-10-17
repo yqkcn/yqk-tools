@@ -1,0 +1,19 @@
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    network_mode: host
+    environment:
+      - UMASK=022
+      - TZ=Asia/Shanghai
+      - QB_WEBUI_PORT=8000
+      - QB_EE_BIN=false
+      - QB_TRACKERS_UPDATE_AUTO=true
+    volumes:
+      - /data:/data
+      - ./config:/config
+    image: johngong/qbittorrent:latest
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
